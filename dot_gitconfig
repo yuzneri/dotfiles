@@ -1,0 +1,30 @@
+[color]
+	ui = true
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	precomposeunicode = true
+	quotepath = false
+	autocrlf = input
+	ignorecase = false
+[push]
+	default = simple
+[alias]
+	graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+	rmb = "!f(){ set -e; base=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null | sed 's#^origin/##'); if [ -z \"$base\" ]; then if git show-ref --verify --quiet refs/heads/main; then base=main; elif git show-ref --verify --quiet refs/heads/master; then base=master; fi; fi; cur=$(git branch --show-current 2>/dev/null || true); if [ -n \"$base\" ] && git show-ref --verify --quiet refs/heads/\"$base\"; then into=\"$base\"; elif [ -n \"$base\" ] && git show-ref --verify --quiet refs/remotes/origin/\"$base\"; then into=\"origin/$base\"; else into=HEAD; fi; del=$(git for-each-ref --format='%(refname:short)' refs/heads --merged \"$into\" | grep -vFx \"${base:-}\" | grep -vFx main | grep -vFx master | grep -vFx \"${cur:-}\" || true); if [ -z \"$del\" ]; then echo 'Nothing to delete'; exit 0; fi; echo \"$del\" | sed 's/^/- /'; printf 'Delete branches? [y/N] '; ans=; IFS= read -r ans || true; case \"$ans\" in y|Y|yes|YES) : ;; *) exit 1;; esac; echo \"$del\" | while IFS= read -r b; do [ -z \"$b\" ] && continue; if git merge-base --is-ancestor \"$b\" \"$into\"; then git branch -D \"$b\"; else echo \"skip (not merged into $into): $b\"; fi; done; }; f"
+	take = reset HEAD --
+	skip = update-index --skip-worktree
+	no-skip = update-index --no-skip-worktree
+	assume = update-index --assume-unchanged
+	no-assume = update-index --no-assume-unchanged
+[diff]
+	compactionHeuristic = true
+[help]
+	autocorrect = 1
+[rebase]
+	autostash = true
+	abbreviateCommands = true
+[user]
+	name = YuzuneYuzuriha
+	email = git@yuzneri.net

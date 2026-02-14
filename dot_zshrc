@@ -1,0 +1,104 @@
+export LANG=ja_JP.UTF-8
+
+if builtin command -v sheldon > /dev/null; then
+  eval "$(sheldon source)"
+fi
+
+function source {
+  _zcompiled $1
+  builtin source $1
+}
+
+function _zcompiled {
+  local compiled="$1.zwc"
+  if [[ ! -r "$compiled" || "$1" -nt "$compiled" ]]; then
+    zcompile $1
+  fi
+}
+
+function _defer_or_run {
+  (( $+functions[zsh-defer] )) && zsh-defer "$@" || "$@"
+}
+
+_zcompiled ~/.zshenv
+_zcompiled ~/.zshrc
+
+_defer_or_run source ~/.lazyload.zsh
+
+# 自動化関連
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_SILENT
+setopt GLOB_COMPLETE
+setopt CDABLE_VARS
+
+# 履歴関連
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt INC_APPEND_HISTORY
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# 補完関連
+setopt AUTO_LIST
+setopt AUTO_MENU
+setopt AUTO_PARAM_KEYS
+setopt LIST_PACKED
+setopt LIST_TYPES
+setopt ALWAYS_LAST_PROMPT
+setopt MAGIC_EQUAL_SUBST
+
+# グロブ関連
+setopt GLOB
+setopt CASE_GLOB
+setopt EXTENDED_GLOB
+setopt GLOB_DOTS
+setopt MARK_DIRS
+setopt NUMERIC_GLOB_SORT
+
+# プロンプト関連
+setopt PROMPT_CR
+setopt PROMPT_SP
+setopt PROMPT_SUBST
+setopt NOTIFY
+setopt TRANSIENT_RPROMPT
+
+# セキュリティ関連
+if [ -z "${INTELLIJ_ENVIRONMENT_READER:-}" ]; then
+  setopt NO_CLOBBER
+fi
+setopt RM_STAR_WAIT
+setopt IGNORE_EOF
+setopt CHECK_JOBS
+
+# その他
+setopt PRINT_EIGHT_BIT
+
+autoload -Uz colors && colors
+
+PROMPT="%{${fg[cyan]}%}%n%{${reset_color}%}@%{${fg[cyan]}%}%m%{${reset_color}%}"'${vcs_info_msg_0_}'"%# "
+if [ ${UID} -eq 0 ]; then
+  PROMPT="%{${bg[cyan]}%}%n%{${reset_color}%}@%{${fg[cyan]}%}%m%{${reset_color}%}"'${vcs_info_msg_0_}'"%# "
+fi
+
+PROMPT2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
+RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
+SPROMPT="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
+
+alias ls='ls --color=auto'
+alias ll='ls -lh --color=auto'
+
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+
+_defer_or_run unfunction source
+
