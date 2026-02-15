@@ -29,6 +29,14 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([%0-9]#)*=0=01;31'
 bindkey "^[[Z" reverse-menu-complete
 
+if command -v chezmoi > /dev/null 2>&1; then
+  eval "$(chezmoi completion zsh)"
+fi
+
+if command -v docker > /dev/null 2>&1; then
+  eval "$(docker completion zsh)"
+fi
+
 if command -v fzf > /dev/null 2>&1; then
   function select-history() {
     BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER")
@@ -38,3 +46,4 @@ if command -v fzf > /dev/null 2>&1; then
   zle -N select-history
   bindkey '^r' select-history
 fi
+
