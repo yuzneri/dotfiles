@@ -92,7 +92,7 @@ alias ll='ls -lh --color=auto'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
-_defer_or_run source ~/.lazyload.zsh
+_defer_or_run source ~/.config/zsh/lazyload.zsh
 _defer_or_run unfunction source
 
-_zcompiled ~/.config/zsh/lazyload.zsh
+[[ -f ~/.config/zsh/local.zsh ]] && source ~/.config/zsh/local.zsh
