@@ -1,2 +1,6 @@
 [tools]
-node = "24"
+bun = "latest"
+node = "latest"
+"npm:ccstatusline" = "latest"
+python = "latest"
+usage = "latest"
