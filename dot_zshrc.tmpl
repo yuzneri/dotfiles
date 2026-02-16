@@ -7,8 +7,6 @@ function _defer_or_run {
   (( $+functions[zsh-defer] )) && zsh-defer "$@" || "$@"
 }
 
-export PATH="$HOME/.local/bin:$PATH"
-
 {{ if eq .chezmoi.os "darwin" }}
 if [ -d "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin" ]; then
   export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
