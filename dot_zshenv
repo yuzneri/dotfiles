@@ -1,1 +1,8 @@
-export PATH="$HOME/.local/bin:$PATH"
+function _zcompiled {
+  local compiled="$1.zwc"
+  if [[ ! -r "$compiled" || "$1" -nt "$compiled" ]]; then
+    zcompile $1
+  fi
+}
+
+_zcompiled ~/.zshenv
