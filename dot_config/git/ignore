@@ -204,3 +204,21 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,linux,macos,windows,intellij+all,visualstudiocode
 
+### Local overrides ###
+compose.override.yaml
+*.local.json
+*.local.yaml
+*.local.yml
+*.local.toml
+
+### Secrets / Environment ###
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+### Misc ###
+*.log
+*.bak
+*.orig
