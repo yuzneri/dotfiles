@@ -33,6 +33,11 @@ if command -v chezmoi > /dev/null 2>&1; then
   eval "$(chezmoi completion zsh)"
 fi
 
+if command -v mise > /dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+  eval "$(mise completion zsh)"
+fi
+
 if command -v docker > /dev/null 2>&1; then
   eval "$(docker completion zsh)"
 fi
