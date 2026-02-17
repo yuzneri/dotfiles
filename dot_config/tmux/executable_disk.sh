@@ -6,4 +6,4 @@ color() {
   fi
 }
 disk=$(df -h / | awk 'NR==2{gsub(/%/,"",$5); printf "%.0f", $5}')
-printf '#[fg=#585858]D:%s%3d%%' "$(color "$disk")" "$disk"
+printf '#[fg=#585858]D:%s%2d%%' "$(color "$disk")" "$disk"

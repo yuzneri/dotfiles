@@ -5,5 +5,5 @@ color() {
   else printf '#[fg=#87d787]'
   fi
 }
-cpu=$(awk -v n="$(nproc)" '{printf "%.0f", $1/n*100}' /proc/loadavg)
-printf '#[fg=#585858]C:%s%3d%%' "$(color "$cpu")" "$cpu"
+cpu=$(top -bn2 -d0.5 | awk '/^%Cpu/{v=100-$8} END{printf "%.0f", v}')
+printf '#[fg=#585858]C:%s%2d%%' "$(color "$cpu")" "$cpu"

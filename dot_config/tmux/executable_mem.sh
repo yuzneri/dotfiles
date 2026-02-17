@@ -6,4 +6,4 @@ color() {
   fi
 }
 mem=$(awk '/^MemTotal:/{t=$2} /^MemAvailable:/{a=$2} END{printf "%.0f", (t-a)/t*100}' /proc/meminfo)
-printf '#[fg=#585858]M:%s%3d%%' "$(color "$mem")" "$mem"
+printf '#[fg=#585858]M:%s%2d%%' "$(color "$mem")" "$mem"
