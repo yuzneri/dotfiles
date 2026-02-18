@@ -37,16 +37,17 @@
       {
         "id": "7a81e944-7a7b-4b67-b750-ba648f187d38",
         "type": "block-timer",
-        "rawValue": true,
-        "color": "brightMagenta"
+        "color": "brightMagenta",
+        "rawValue": true
       },
       {
         "id": "74dbfb88-511d-4396-be8f-81b4a730f5d6",
         "type": "block-timer",
+        "color": "brightMagenta",
         "metadata": {
           "display": "progress"
         },
-        "color": "brightMagenta"
+        "rawValue": true
       }
     ],
     []
