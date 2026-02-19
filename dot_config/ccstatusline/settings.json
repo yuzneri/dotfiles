@@ -16,7 +16,7 @@
       {
         "id": "162d69a1-e53d-478c-93bd-746c5ea5316d",
         "type": "context-length",
-        "color": "brightYellow",
+        "color": "white",
         "bold": false,
         "rawValue": true
       },
@@ -31,25 +31,28 @@
         "color": "brightYellow",
         "bold": false,
         "rawValue": true
-      }
-    ],
-    [
-      {
-        "id": "7a81e944-7a7b-4b67-b750-ba648f187d38",
-        "type": "block-timer",
-        "color": "brightMagenta",
-        "rawValue": true
       },
       {
-        "id": "74dbfb88-511d-4396-be8f-81b4a730f5d6",
+        "id": "d8d7abda-d61e-4df1-bdbf-2df2584d45fb",
+        "type": "flex-separator"
+      },
+      {
+        "id": "9ae97428-dfb7-4409-92ab-26f1a393354f",
         "type": "block-timer",
-        "color": "brightMagenta",
+        "rawValue": true,
+        "color": "brightMagenta"
+      },
+      {
+        "id": "eda07cbb-bb70-4a81-8dff-0cacf8c233f2",
+        "type": "block-timer",
+        "rawValue": true,
         "metadata": {
-          "display": "progress"
+          "display": "progress-short"
         },
-        "rawValue": true
+        "color": "brightMagenta"
       }
     ],
+    [],
     []
   ],
   "flexMode": "full",
