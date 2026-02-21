@@ -1,6 +1,7 @@
 [tools]
 bun = "latest"
 node = "latest"
+"npm:@openai/codex" = "latest"
 "npm:ccstatusline" = "latest"
 python = "latest"
 usage = "latest"
