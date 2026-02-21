@@ -23,7 +23,11 @@
       "Bash(mkdir:*)",
       "Bash(gh:*)",
       "Bash(git:*)",
-      "Bash(which:*)"
+      "Bash(which:*)",
+      "mcp__firecrawl-mcp__*",
+      "mcp__deepwiki__*",
+      "mcp__context7__*",
+      "mcp__brightdata__*"
     ],
     "deny": [
       "Read(.env)",
@@ -31,6 +35,28 @@
       "Read(**/.env)",
       "Read(**/.env.*)",
       "Read(**/secrets/**)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '\\a' > $(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}')"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '\\a' > $(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}')"
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
