@@ -6,6 +6,9 @@
     "commit": "",
     "pr": ""
   },
+  "env": {
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "64000"
+  },
   "permissions": {
     "allow": [
       "LS",
@@ -43,17 +46,18 @@
         "hooks": [
           {
             "type": "command",
-            "command": "printf '\\a' > $(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}')"
+            "command": "if [ -n \"$TMUX_PANE\" ]; then printf '\\a' > $(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}'); else printf '\\a'; fi"
           }
         ]
       }
     ],
     "Notification": [
       {
+        "matcher": "permission_prompt|elicitation_dialog",
         "hooks": [
           {
             "type": "command",
-            "command": "printf '\\a' > $(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}')"
+            "command": "if [ -n \"$TMUX_PANE\" ]; then printf '\\a' > $(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}'); else printf '\\a'; fi"
           }
         ]
       }
