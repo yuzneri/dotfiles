@@ -13,8 +13,6 @@
     "allow": [
       "LS",
       "Read",
-      "Edit",
-      "Write",
       "Glob",
       "Grep",
       "WebFetch",
