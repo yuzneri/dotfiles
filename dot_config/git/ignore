@@ -222,3 +222,5 @@ compose.override.yaml
 *.log
 *.bak
 *.orig
+
+.serena/
