@@ -1,5 +1,8 @@
 [tools]
 bun = "latest"
+"github:jesseduffield/lazydocker" = "latest"
+"github:jesseduffield/lazygit" = "latest"
+"github:rossmacarthur/sheldon" = "latest"
 node = "latest"
 "npm:@openai/codex" = "latest"
 "npm:ccstatusline" = "latest"
