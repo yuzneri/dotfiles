@@ -7,6 +7,13 @@ function _defer_or_run {
   (( $+functions[zsh-defer] )) && zsh-defer "$@" || "$@"
 }
 
+claude() {
+  command claude "$@"
+  if [[ -n "$TMUX_PANE" ]]; then
+    tmux select-pane -t "$TMUX_PANE" -T ""
+  fi
+}
+
 {{ if eq .chezmoi.os "darwin" }}
 if [ -d "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin" ]; then
   export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
