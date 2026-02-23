@@ -17,7 +17,9 @@ claude() {
 if builtin command -v mise > /dev/null; then
   mnpm()  { local s="$1"; shift; mise use -g "npm:${s}" "$@"; }
   mbun()  { local s="$1"; shift; mise use -g "bun:${s}" "$@"; }
+  mpipx()  { local s="$1"; shift; mise use -g "pipx:${s}" "$@"; }
   mgh() { local s="$1"; shift; mise use -g "github:${s}" "$@"; }
+  mgl() { local s="$1"; shift; mise use -g "gitlab:${s}" "$@"; }
 fi
 
 {{ if eq .chezmoi.os "darwin" }}
