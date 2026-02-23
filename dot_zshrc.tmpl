@@ -14,6 +14,12 @@ claude() {
   fi
 }
 
+if builtin command -v mise > /dev/null; then
+  mnpm()  { local s="$1"; shift; mise use -g "npm:${s}" "$@"; }
+  mbun()  { local s="$1"; shift; mise use -g "bun:${s}" "$@"; }
+  mgh() { local s="$1"; shift; mise use -g "github:${s}" "$@"; }
+fi
+
 {{ if eq .chezmoi.os "darwin" }}
 if [ -d "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin" ]; then
   export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
