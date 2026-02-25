@@ -40,18 +40,26 @@
       "Bash(git:*)", "Bash(gh:*)",
       "Bash(docker:*)",
 
-      "mcp__firecrawl-mcp__*",
       "mcp__deepwiki__*",
       "mcp__context7__*",
-      "mcp__brightdata__*",
-      "mcp__serena__*"
+      "mcp__serena__*",
+      "mcp__playwright__*",
+      "mcp__RivalSearchMCP__*",
+      "mcp__markitdown__*"
     ],
     "deny": [
       "Read(.env)",
       "Read(.env.*)",
       "Read(**/.env)",
       "Read(**/.env.*)",
-      "Read(**/secrets/**)"
+      "Read(**/secrets/**)",
+
+      "Bash(apt install:*)",
+      "Bash(apt-get install:*)",
+      "Bash(sudo:*)",
+      "Bash(brew install:*)",
+      "Bash(git push:*)",
+      "Bash(git push)"
     ]
   },
   "hooks": {
