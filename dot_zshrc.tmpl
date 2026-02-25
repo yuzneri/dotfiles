@@ -14,14 +14,6 @@ claude() {
   fi
 }
 
-if builtin command -v mise > /dev/null; then
-  mnpm()  { local s="$1"; shift; mise use -g "npm:${s}" "$@"; }
-  mbun()  { local s="$1"; shift; mise use -g "bun:${s}" "$@"; }
-  mpipx()  { local s="$1"; shift; mise use -g "pipx:${s}" "$@"; }
-  mgh() { local s="$1"; shift; mise use -g "github:${s}" "$@"; }
-  mgl() { local s="$1"; shift; mise use -g "gitlab:${s}" "$@"; }
-fi
-
 {{ if eq .chezmoi.os "darwin" }}
 if [ -d "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin" ]; then
   export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
@@ -100,13 +92,11 @@ PROMPT2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
 RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
 SPROMPT="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
-alias ls='ls --color=auto'
-alias ll='ls -lh --color=auto'
-
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
+source ~/.config/zsh/alias.zsh
+[[ -f ~/.config/zsh/local.zsh ]] && source ~/.config/zsh/local.zsh
 _defer_or_run source ~/.config/zsh/lazyload.zsh
 _defer_or_run unfunction source
 
-[[ -f ~/.config/zsh/local.zsh ]] && source ~/.config/zsh/local.zsh
