@@ -31,19 +31,22 @@
         "color": "brightYellow",
         "bold": false,
         "rawValue": true
-      },
+      }
+    ],
+    [
       {
-        "id": "d8d7abda-d61e-4df1-bdbf-2df2584d45fb",
-        "type": "flex-separator"
-      },
-      {
-        "id": "9ae97428-dfb7-4409-92ab-26f1a393354f",
+        "id": "fd021cd0-25e1-40a8-aa75-28a3e90cee7e",
         "type": "block-timer",
         "rawValue": true,
         "color": "brightMagenta"
       },
       {
-        "id": "eda07cbb-bb70-4a81-8dff-0cacf8c233f2",
+        "id": "bbb1370f-35f0-4e91-9bcb-0b15e007f5d0",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "f3bb5c35-e64d-4abd-89eb-eb118587f841",
         "type": "block-timer",
         "rawValue": true,
         "metadata": {
@@ -52,7 +55,6 @@
         "color": "brightMagenta"
       }
     ],
-    [],
     []
   ],
   "flexMode": "full",
