@@ -48,12 +48,6 @@
       "mcp__markitdown__*"
     ],
     "deny": [
-      "Read(.env)",
-      "Read(.env.*)",
-      "Read(**/.env)",
-      "Read(**/.env.*)",
-      "Read(**/secrets/**)",
-
       "Bash(apt install:*)",
       "Bash(apt-get install:*)",
       "Bash(sudo:*)",
