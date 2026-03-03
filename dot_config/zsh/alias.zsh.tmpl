@@ -8,3 +8,15 @@ fi
 
 alias ls='ls --color=auto'
 alias ll='ls -lh --color=auto'
+
+{{ if eq .chezmoi.os "darwin" }}
+if [ -x $HOMEBREW_OPT/coreutils/libexec/gnubin/ls ]; then
+  alias ls='ls --color=auto'
+  alias ll='ls -lh --color=auto'
+fi
+{{ end }}
+
+if builtin command -v eza > /dev/null; then
+  alias ls='eza -F'
+  alias ll='eza -lgF --git --time-style long-iso --hyperlink --icons'
+fi
