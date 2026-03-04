@@ -1,4 +1,4 @@
-if builtin command -v mise > /dev/null; then
+if (( $+commands[mise] )); then
   mnpm()  { local s="$1"; shift; mise use -g "npm:${s}" "$@"; }
   mbun()  { local s="$1"; shift; mise use -g "bun:${s}" "$@"; }
   mpipx()  { local s="$1"; shift; mise use -g "pipx:${s}" "$@"; }
@@ -6,7 +6,7 @@ if builtin command -v mise > /dev/null; then
   mgl() { local s="$1"; shift; mise use -g "gitlab:${s}" "$@"; }
 fi
 
-if builtin command -v nvim > /dev/null; then
+if (( $+commands[nvim] )); then
   alias vi='nvim'
   alias vim='nvim'
 fi
@@ -21,7 +21,7 @@ if [ -x $HOMEBREW_OPT/coreutils/libexec/gnubin/ls ]; then
 fi
 {{ end }}
 
-if builtin command -v eza > /dev/null; then
+if (( $+commands[eza] )); then
   alias ls='eza -F'
   alias ll='eza -lgF --git --time-style long-iso --hyperlink --icons'
 fi

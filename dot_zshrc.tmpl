@@ -20,7 +20,7 @@ if [ -d "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin" ]; then
 fi
 {{ end }}
 
-if builtin command -v sheldon > /dev/null; then
+if (( $+commands[sheldon] )); then
   eval "$(sheldon source)"
 fi
 
@@ -92,8 +92,13 @@ PROMPT2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
 RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
 SPROMPT="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+if (( $+commands[nvim] )); then
+  export EDITOR="nvim"
+  export VISUAL="nvim"
+else
+  export EDITOR="vim"
+  export VISUAL="vim"
+fi
 
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
