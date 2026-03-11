@@ -1,0 +1,14 @@
+#!/bin/bash
+# config.toml hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+
+set -eu
+
+MISE_PATH="$HOME/.local/bin/mise"
+
+if [ ! -f "$MISE_PATH" ]; then
+    echo "Installing mise..."
+    curl -fsSL https://mise.run | sh
+fi
+
+echo "Installing mise tools..."
+"$MISE_PATH" install --yes
