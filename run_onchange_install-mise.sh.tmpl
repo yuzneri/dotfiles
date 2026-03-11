@@ -3,7 +3,6 @@
 
 set -eu
 
-export PATH="$HOME/.local/bin:$HOME/.local/share/mise/shims:$PATH"
 MISE_PATH="$HOME/.local/bin/mise"
 
 if [ ! -f "$MISE_PATH" ]; then
@@ -11,5 +10,7 @@ if [ ! -f "$MISE_PATH" ]; then
     curl -fsSL https://mise.run | sh
 fi
 
+eval "$("$MISE_PATH" activate bash)"
+
 echo "Installing mise tools..."
-"$MISE_PATH" install --yes
+mise install --yes
