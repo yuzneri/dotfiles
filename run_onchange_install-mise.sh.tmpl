@@ -13,7 +13,7 @@ fi
 export PATH="$HOME/.local/bin:$HOME/.local/share/mise/shims:$PATH"
 
 echo "Installing node..."
-"$MISE_PATH" use --global node@latest
+"$MISE_PATH" install --yes node
 "$MISE_PATH" reshim
 
 echo "Installing mise tools..."
