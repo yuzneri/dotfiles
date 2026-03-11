@@ -10,7 +10,11 @@ if [ ! -f "$MISE_PATH" ]; then
     curl -fsSL https://mise.run | sh
 fi
 
-eval "$("$MISE_PATH" activate bash)"
+export PATH="$HOME/.local/bin:$HOME/.local/share/mise/shims:$PATH"
+
+echo "Installing node..."
+"$MISE_PATH" use --global node@latest
+"$MISE_PATH" reshim
 
 echo "Installing mise tools..."
-mise install --yes
+"$MISE_PATH" install --yes
