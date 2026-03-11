@@ -15,7 +15,8 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u(%b)%f"
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "%F{yellow}"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}"
-precmd() { vcs_info }
+_vcs_info_precmd() { vcs_info }
+add-zsh-hook precmd _vcs_info_precmd
 
 # Completion
 zstyle ':completion:*' completer _oldlist _complete _approximate _correct _match _prefix

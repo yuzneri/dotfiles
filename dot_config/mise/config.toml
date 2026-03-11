@@ -1,5 +1,6 @@
 [tools]
 bun = "latest"
+"github:ajeetdsouza/zoxide" = "latest"
 "github:eza-community/eza" = "latest"
 "github:jesseduffield/lazydocker" = "latest"
 "github:jesseduffield/lazygit" = "latest"

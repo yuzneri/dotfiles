@@ -24,6 +24,10 @@ if (( $+commands[sheldon] )); then
   eval "$(sheldon source)"
 fi
 
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init zsh --cmd cd)"
+fi
+
 # 自動化関連
 setopt AUTO_CD
 setopt AUTO_PUSHD
@@ -45,6 +49,11 @@ setopt HIST_REDUCE_BLANKS
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+
+# 存在しないコマンドをヒストリーに記録しない
+zshaddhistory() {
+  whence ${${(z)1}[1]} >| /dev/null || return 1
+}
 
 # 補完関連
 setopt AUTO_LIST
