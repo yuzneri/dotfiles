@@ -12,8 +12,8 @@ fi
 
 export PATH="$HOME/.local/bin:$HOME/.local/share/mise/shims:$PATH"
 
-echo "Installing node..."
-"$MISE_PATH" install --yes node
+echo "Installing core runtimes..."
+"$MISE_PATH" install --yes node python go bun
 "$MISE_PATH" reshim
 
 echo "Installing mise tools..."
