@@ -1,45 +1,67 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "language": "japanese",
-  "alwaysThinkingEnabled": true,
+  "env": {
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "64000"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
   },
-  "env": {
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "64000"
-  },
   "permissions": {
     "allow": [
-      "LS", "Read", "Edit", "Write", "Glob", "Grep",
-      "WebFetch", "WebSearch",
-      "Task", "ToolSearch",
-
-      "Bash(cd:*)", "Bash(pwd:*)", "Bash(mkdir:*)",
-      "Bash(ls:*)", "Bash(find:*)", "Bash(tree:*)",
-      "Bash(stat:*)", "Bash(file:*)",
-      "Bash(realpath:*)", "Bash(readlink:*)",
-
-      "Bash(cat:*)", "Bash(head:*)", "Bash(tail:*)",
-      "Bash(grep:*)", "Bash(wc:*)",
-      "Bash(sort:*)", "Bash(uniq:*)", "Bash(diff:*)",
-      "Bash(tr:*)", "Bash(cut:*)", "Bash(awk:*)",
+      "LS",
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Task",
+      "ToolSearch",
+      "Bash(cd:*)",
+      "Bash(pwd:*)",
+      "Bash(mkdir:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(stat:*)",
+      "Bash(file:*)",
+      "Bash(realpath:*)",
+      "Bash(readlink:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(grep:*)",
+      "Bash(wc:*)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)",
+      "Bash(diff:*)",
+      "Bash(tr:*)",
+      "Bash(cut:*)",
+      "Bash(awk:*)",
       "Bash(jq:*)",
-
-      "Bash(echo:*)", "Bash(which:*)",
-      "Bash(env:*)", "Bash(printenv:*)",
-      "Bash(date:*)", "Bash(whoami:*)", "Bash(uname:*)",
-
-      "Bash(node:*)", "Bash(npx:*)", "Bash(bunx:*)",
-      "Bash(python:*)", "Bash(python3:*)",
+      "Bash(echo:*)",
+      "Bash(which:*)",
+      "Bash(env:*)",
+      "Bash(printenv:*)",
+      "Bash(date:*)",
+      "Bash(whoami:*)",
+      "Bash(uname:*)",
+      "Bash(node:*)",
+      "Bash(npx:*)",
+      "Bash(bunx:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
       "Bash(make:*)",
-
-      "Bash(curl:*)", "Bash(wget:*)",
-      "Bash(tar:*)", "Bash(unzip:*)", "Bash(gunzip:*)",
-
-      "Bash(git:*)", "Bash(gh:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(tar:*)",
+      "Bash(unzip:*)",
+      "Bash(gunzip:*)",
+      "Bash(git:*)",
+      "Bash(gh:*)",
       "Bash(docker:*)",
-
       "mcp__deepwiki__*",
       "mcp__context7__*",
       "mcp__serena__*",
@@ -54,7 +76,8 @@
       "Bash(brew install:*)",
       "Bash(git push:*)",
       "Bash(git push)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
   "hooks": {
     "Stop": [
@@ -83,5 +106,9 @@
     "type": "command",
     "command": "bunx -y ccstatusline@latest",
     "padding": 0
-  }
+  },
+  "language": "japanese",
+  "alwaysThinkingEnabled": true,
+  "skipAutoPermissionPrompt": true,
+  "skipDangerousModePermissionPrompt": true
 }

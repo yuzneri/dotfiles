@@ -9,6 +9,17 @@
         "rawValue": true
       },
       {
+        "id": "e0b92c6c-68b7-48d5-a93e-eafa8f144315",
+        "type": "separator",
+        "character": " "
+      },
+      {
+        "id": "1f6f4a23-d181-419e-9360-719da3ea3cfa",
+        "type": "thinking-effort",
+        "color": "brightRed",
+        "rawValue": true
+      },
+      {
         "id": "2",
         "type": "separator",
         "character": " "
@@ -35,27 +46,48 @@
     ],
     [
       {
-        "id": "fd021cd0-25e1-40a8-aa75-28a3e90cee7e",
-        "type": "block-timer",
+        "id": "d3e4e57f-4d8c-46e3-a5d4-288481ef4913",
+        "type": "reset-timer",
+        "color": "brightBlue",
         "rawValue": true,
-        "color": "brightMagenta"
+        "metadata": {
+          "display": "time",
+          "compact": "true"
+        }
       },
       {
-        "id": "bbb1370f-35f0-4e91-9bcb-0b15e007f5d0",
-        "type": "separator",
-        "character": " "
-      },
-      {
-        "id": "f3bb5c35-e64d-4abd-89eb-eb118587f841",
-        "type": "block-timer",
+        "id": "ec5a43be-e8ff-43c1-8807-df0349db2a6e",
+        "type": "session-usage",
+        "color": "brightBlue",
         "rawValue": true,
         "metadata": {
           "display": "progress-short"
-        },
-        "color": "brightMagenta"
+        }
+      },
+      {
+        "id": "6fc8affe-66ef-497f-8dbb-f15f0336264d",
+        "type": "separator",
+        "character": ","
+      },
+      {
+        "id": "8f666956-a5f5-46a0-a0f2-a9c230084157",
+        "type": "weekly-reset-timer",
+        "color": "",
+        "rawValue": true,
+        "metadata": {
+          "compact": "true"
+        }
+      },
+      {
+        "id": "6dcfbe43-4a87-421b-a1cf-be2bc253bf39",
+        "type": "weekly-usage",
+        "color": "",
+        "rawValue": true,
+        "metadata": {
+          "display": "progress-short"
+        }
       }
-    ],
-    []
+    ]
   ],
   "flexMode": "full",
   "compactThreshold": 60,
