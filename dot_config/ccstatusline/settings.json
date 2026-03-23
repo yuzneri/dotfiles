@@ -22,33 +22,35 @@
       {
         "id": "2",
         "type": "separator",
-        "character": " "
+        "character": "|"
       },
       {
-        "id": "162d69a1-e53d-478c-93bd-746c5ea5316d",
-        "type": "context-length",
-        "color": "white",
-        "bold": false,
-        "rawValue": true
+        "id": "c38dec14-19e9-4d57-8587-81ecc1061cbb",
+        "type": "custom-text",
+        "color": "",
+        "customText": "ctx "
       },
       {
-        "id": "0e2ced8e-ae7a-4b46-b2cf-7b732f82f3ed",
-        "type": "separator",
-        "character": " "
-      },
-      {
-        "id": "d6deae9c-bf1b-4e94-94bd-77541026371d",
-        "type": "context-percentage",
-        "color": "brightYellow",
-        "bold": false,
-        "rawValue": true
+        "id": "f82bd4d7-d1f9-4ea9-9569-aaa8c9a9f3fd",
+        "type": "context-bar",
+        "color": "",
+        "rawValue": true,
+        "metadata": {
+          "display": "progress-short"
+        }
       }
     ],
     [
       {
+        "id": "afcbfc07-6e4a-489d-8c38-51509e2315b1",
+        "type": "custom-text",
+        "color": "white",
+        "customText": "5h "
+      },
+      {
         "id": "d3e4e57f-4d8c-46e3-a5d4-288481ef4913",
         "type": "reset-timer",
-        "color": "brightBlue",
+        "color": "brightMagenta",
         "rawValue": true,
         "metadata": {
           "display": "time",
@@ -58,7 +60,7 @@
       {
         "id": "ec5a43be-e8ff-43c1-8807-df0349db2a6e",
         "type": "session-usage",
-        "color": "brightBlue",
+        "color": "brightMagenta",
         "rawValue": true,
         "metadata": {
           "display": "progress-short"
@@ -67,12 +69,18 @@
       {
         "id": "6fc8affe-66ef-497f-8dbb-f15f0336264d",
         "type": "separator",
-        "character": ","
+        "character": "|"
+      },
+      {
+        "id": "ecb9850e-6ff1-4ce5-899a-032e34317b70",
+        "type": "custom-text",
+        "color": "white",
+        "customText": "7d "
       },
       {
         "id": "8f666956-a5f5-46a0-a0f2-a9c230084157",
         "type": "weekly-reset-timer",
-        "color": "",
+        "color": "magenta",
         "rawValue": true,
         "metadata": {
           "compact": "true"
@@ -81,7 +89,7 @@
       {
         "id": "6dcfbe43-4a87-421b-a1cf-be2bc253bf39",
         "type": "weekly-usage",
-        "color": "",
+        "color": "magenta",
         "rawValue": true,
         "metadata": {
           "display": "progress-short"
