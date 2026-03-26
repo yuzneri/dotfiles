@@ -1,3 +1,9 @@
+---
+name: proofread
+description: 文書の校正。誤字脱字・表記揺れ・句読点・文法・読みやすさをチェックする
+effort: medium
+---
+
 以下の文書を校正してください。
 
 ## 対象

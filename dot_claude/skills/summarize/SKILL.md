@@ -1,3 +1,9 @@
+---
+name: summarize
+description: 文書の要約。概要・要点・構成を正確かつ簡潔にまとめる
+effort: medium
+---
+
 以下の文書を要約してください。
 
 ## 対象

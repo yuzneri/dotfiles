@@ -1,3 +1,9 @@
+---
+name: fix-xcheck
+description: /xcheck の指摘に基づき矛盾・不整合を修正する
+effort: medium
+---
+
 直前の /xcheck の結果から、指定された指摘番号について修正してください。
 
 ## 対象

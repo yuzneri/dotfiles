@@ -1,3 +1,9 @@
+---
+name: fix-proofread
+description: /proofread の指摘に基づき誤字脱字・表記揺れ等を修正する
+effort: low
+---
+
 直前の /proofread の結果から、指定された指摘番号について修正してください。
 
 ## 対象

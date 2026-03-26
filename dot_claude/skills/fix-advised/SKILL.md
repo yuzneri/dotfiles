@@ -1,3 +1,9 @@
+---
+name: fix-advised
+description: /advise の指摘に基づき文書内容を改善する
+effort: medium
+---
+
 直前の /advise の結果から、指定された指摘番号について修正してください。
 
 ## 対象

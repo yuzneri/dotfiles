@@ -1,3 +1,9 @@
+---
+name: fix-verified
+description: /verify の指摘を再調査のうえ修正する
+effort: high
+---
+
 直前の /verify の結果から、指定された指摘番号について再調査のうえ修正してください。
 
 ## 対象
