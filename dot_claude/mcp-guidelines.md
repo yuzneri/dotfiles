@@ -45,8 +45,10 @@ CLAUDE.md の原則に加え、各MCPの詳細な使い分けをまとめる。
 | **WebFetch**（標準） | URL→Markdown変換 | 第一選択。静的ページのコンテンツ取得 |
 | RivalSearch: `content_operations` / `map_website` | 取得+分析・サイト探索 | 検索→取得→分析の一連の流れ |
 | **Playwright** | ブラウザ実行 | JSレンダリング必要（SPA等）、ブラウザ操作、スクリーンショット |
+| **ScrapingAnt**: `get_web_page_markdown` 等 | プロキシ経由のページ取得 | CAPTCHA・403・Cloudflareチャレンジ等でブロックされた場合のフォールバック |
 
 - WebFetch でコンテンツが空・不完全 → JSレンダリングが必要 → Playwright
+- WebFetch / Playwright でブロック（CAPTCHA・403・アンチボット）される → **ScrapingAnt**
 - 回答にはソースURLを必ず付記する
 
 ## ドキュメント変換（MarkItDown）
