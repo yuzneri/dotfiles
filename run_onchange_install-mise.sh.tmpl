@@ -8,13 +8,14 @@ MISE_PATH="$HOME/.local/bin/mise"
 if [ ! -f "$MISE_PATH" ]; then
     echo "Installing mise..."
     curl -fsSL https://mise.run | sh
+
+    echo "Installing core runtimes..."
+    "$MISE_PATH" install --yes node python go
+    "$MISE_PATH" install --yes bun
+    "$MISE_PATH" reshim
 fi
 
 export PATH="$HOME/.local/bin:$HOME/.local/share/mise/shims:$PATH"
-
-echo "Installing core runtimes..."
-"$MISE_PATH" install --yes node python go bun
-"$MISE_PATH" reshim
 
 echo "Installing mise tools..."
 "$MISE_PATH" install --yes
