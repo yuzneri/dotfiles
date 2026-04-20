@@ -1,0 +1,49 @@
+#!/bin/sh
+
+set -u
+
+URL='https://raw.githubusercontent.com/wezterm/wezterm/main/termwiz/data/wezterm.terminfo'
+
+warn() {
+  printf '%s\n' "$*" >&2
+}
+
+if ! command -v tic >/dev/null 2>&1; then
+  warn 'wezterm terminfo: skipped because tic is not installed'
+  exit 0
+fi
+
+tmpdir="$(mktemp -d 2>/dev/null)" || {
+  warn 'wezterm terminfo: skipped because mktemp failed'
+  exit 0
+}
+
+cleanup() {
+  rm -rf "$tmpdir"
+}
+
+trap cleanup EXIT HUP INT TERM
+
+src="$tmpdir/wezterm.terminfo"
+
+if command -v curl >/dev/null 2>&1; then
+  if ! curl -fsSL -o "$src" "$URL"; then
+    warn 'wezterm terminfo: download failed; keeping existing entry'
+    exit 0
+  fi
+elif command -v wget >/dev/null 2>&1; then
+  if ! wget -qO "$src" "$URL"; then
+    warn 'wezterm terminfo: download failed; keeping existing entry'
+    exit 0
+  fi
+else
+  warn 'wezterm terminfo: skipped because neither curl nor wget is installed'
+  exit 0
+fi
+
+mkdir -p "$HOME/.terminfo"
+
+if ! tic -x -o "$HOME/.terminfo" "$src"; then
+  warn 'wezterm terminfo: tic failed; keeping existing entry'
+  exit 0
+fi
