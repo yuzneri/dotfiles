@@ -70,6 +70,7 @@
       "mcp__RivalSearchMCP__*",
       "mcp__markitdown__*",
       "mcp__claude_ai_limitless__*",
+      "mcp__claude_ai_Google_Calendar__*",
       "mcp__twilog-mcp__*",
       "mcp__scrapingant__*"
     ],
