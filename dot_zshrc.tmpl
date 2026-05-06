@@ -18,10 +18,6 @@ if (( $+commands[sheldon] )); then
   eval "$(sheldon source)"
 fi
 
-if (( $+commands[zoxide] )); then
-  eval "$(zoxide init zsh --cmd cd)"
-fi
-
 # 自動化関連
 setopt AUTO_CD
 setopt AUTO_PUSHD
@@ -119,3 +115,7 @@ source ~/.config/zsh/alias.zsh
 [[ -f ~/.config/zsh/local.zsh ]] && source ~/.config/zsh/local.zsh
 _defer_or_run source ~/.config/zsh/lazyload.zsh
 _defer_or_run unfunction source
+
+if (( $+commands[zoxide] )) && [[ -z "${CLAUDECODE:-}${CODEX_THREAD_ID:-}" ]]; then
+  eval "$(zoxide init zsh --cmd cd)"
+fi
