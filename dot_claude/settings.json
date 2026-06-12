@@ -117,7 +117,8 @@
   },
   "language": "japanese",
   "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
   "skipAutoPermissionPrompt": true,
-  "effortLevel": "high"
+  "model": "claude-fable-5[1m]"
 }
