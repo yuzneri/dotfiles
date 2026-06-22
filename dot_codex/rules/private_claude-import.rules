@@ -1,0 +1,87 @@
+# Imported from ~/.claude/settings.json.
+# Rules apply when Codex requests execution outside its sandbox.
+
+prefix_rule(pattern = ["pwd"], decision = "allow")
+prefix_rule(pattern = ["mkdir"], decision = "allow")
+prefix_rule(pattern = ["ls"], decision = "allow")
+prefix_rule(pattern = ["find"], decision = "allow")
+prefix_rule(pattern = ["tree"], decision = "allow")
+prefix_rule(pattern = ["stat"], decision = "allow")
+prefix_rule(pattern = ["file"], decision = "allow")
+prefix_rule(pattern = ["realpath"], decision = "allow")
+prefix_rule(pattern = ["readlink"], decision = "allow")
+prefix_rule(pattern = ["cat"], decision = "allow")
+prefix_rule(pattern = ["head"], decision = "allow")
+prefix_rule(pattern = ["tail"], decision = "allow")
+prefix_rule(pattern = ["grep"], decision = "allow")
+prefix_rule(pattern = ["rg"], decision = "allow")
+prefix_rule(pattern = ["wc"], decision = "allow")
+prefix_rule(pattern = ["sort"], decision = "allow")
+prefix_rule(pattern = ["uniq"], decision = "allow")
+prefix_rule(pattern = ["diff"], decision = "allow")
+prefix_rule(pattern = ["tr"], decision = "allow")
+prefix_rule(pattern = ["cut"], decision = "allow")
+prefix_rule(pattern = ["awk"], decision = "allow")
+prefix_rule(pattern = ["jq"], decision = "allow")
+prefix_rule(pattern = ["echo"], decision = "allow")
+prefix_rule(pattern = ["which"], decision = "allow")
+prefix_rule(pattern = ["env"], decision = "allow")
+prefix_rule(pattern = ["printenv"], decision = "allow")
+prefix_rule(pattern = ["date"], decision = "allow")
+prefix_rule(pattern = ["whoami"], decision = "allow")
+prefix_rule(pattern = ["uname"], decision = "allow")
+prefix_rule(pattern = ["node"], decision = "allow")
+prefix_rule(pattern = ["npx"], decision = "allow")
+prefix_rule(pattern = ["bunx"], decision = "allow")
+prefix_rule(pattern = ["python"], decision = "allow")
+prefix_rule(pattern = ["python3"], decision = "allow")
+prefix_rule(pattern = ["make"], decision = "allow")
+prefix_rule(pattern = ["curl"], decision = "allow")
+prefix_rule(pattern = ["wget"], decision = "allow")
+prefix_rule(pattern = ["tar"], decision = "allow")
+prefix_rule(pattern = ["unzip"], decision = "allow")
+prefix_rule(pattern = ["gunzip"], decision = "allow")
+prefix_rule(pattern = ["git"], decision = "allow")
+prefix_rule(pattern = ["gh"], decision = "allow")
+prefix_rule(pattern = ["docker"], decision = "allow")
+
+prefix_rule(
+    pattern = ["sudo"],
+    decision = "forbidden",
+    justification = "Run the required command without sudo or request an explicit environment change.",
+)
+prefix_rule(
+    pattern = ["apt", "install"],
+    decision = "forbidden",
+    justification = "System package installation requires an explicit user decision.",
+)
+prefix_rule(
+    pattern = ["apt-get", "install"],
+    decision = "forbidden",
+    justification = "System package installation requires an explicit user decision.",
+)
+prefix_rule(
+    pattern = ["brew", "install"],
+    decision = "forbidden",
+    justification = "Package installation requires an explicit user decision.",
+)
+prefix_rule(
+    pattern = ["git", "push"],
+    decision = "forbidden",
+    justification = "Publishing changes must be explicitly requested by the user.",
+)
+prefix_rule(
+    pattern = ["git", "reset"],
+    decision = "forbidden",
+    justification = "Use a non-destructive Git operation or ask the user explicitly.",
+)
+prefix_rule(
+    pattern = ["git", "checkout", "."],
+    decision = "forbidden",
+    justification = "This can discard working-tree changes; use a targeted non-destructive operation.",
+)
+prefix_rule(
+    pattern = ["git", "clean"],
+    decision = "forbidden",
+    justification = "This can delete untracked files; inspect them and ask the user explicitly.",
+)
