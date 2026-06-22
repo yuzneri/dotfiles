@@ -1,0 +1,3 @@
+# Grok Build (xAI 公式 CLI) が自前で書き換えるため chezmoi 管理外
+.grok
+.grok/**
