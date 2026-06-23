@@ -9,18 +9,27 @@ CLAUDE.md の原則に加え、各MCPの詳細な使い分けをまとめる。
 - **シンボル編集を優先**: 関数・クラス単位の変更は `replace_symbol_body` を使う。行単位の部分修正は標準の Edit ツールを使う。
 - **参照の追跡**: シンボルを変更する際は `find_referencing_symbols` で影響範囲を確認し、後方互換性を保つか参照元も更新する。
 
-## ドキュメント参照（Context7 / DeepWiki）
+## ドキュメント参照（Context7 / DeepWiki / MDN）
 
-| 観点 | Context7 | DeepWiki |
-|---|---|---|
-| 対象 | 外部ライブラリ / API の仕様 | GitHub リポジトリの構造・実装 |
-| 用途 | 実装方法、設定値、API名、バージョン差分 | ディレクトリ構成、モジュール役割、repo文脈QA |
-| 使い方 | `resolve-library-id` → `query-docs` | まず構造確認 → 必要箇所を読む |
+| 観点 | Context7 | DeepWiki | MDN |
+|---|---|---|---|
+| 対象 | 外部ライブラリ / API の仕様 | GitHub リポジトリの構造・実装 | Web標準プラットフォーム（JS言語機能・CSS・HTML・Web API） |
+| 用途 | 実装方法、設定値、API名、バージョン差分 | ディレクトリ構成、モジュール役割、repo文脈QA | 標準APIの仕様・構文・挙動、ブラウザ互換性 |
+| 使い方 | `resolve-library-id` → `query-docs` | まず構造確認 → 必要箇所を読む | `search` → `get-doc`、互換性は `get-compat` |
 
 - **併用時の順序**: DeepWiki（repo把握）→ Context7（外部仕様）→ repo文脈に合わせて実装
 - 外部ライブラリの実装・設定・コード生成時は Context7 を原則使う
 - バージョン差がありそうな場合はバージョンを明示して確認する
 - repo 固有の事情と外部仕様を区別して説明する。バージョン差・非推奨 API・破壊的変更は明示し、不明な点は断定しない
+
+### MDN（Web標準プラットフォーム）
+
+MDN Web Docs を参照する。Web標準の言語機能・API・ブラウザ互換性に特化し、訓練データより正確で新しい情報を返す。
+
+- **対象**: JavaScript の言語機能、CSS プロパティ、HTML 要素、Web API（DOM・Fetch・WebGL 等）など、ブラウザ／ランタイムが実装する標準技術。
+- **Context7 との使い分け**: フレームワーク／ライブラリ（React・Next.js 等）の仕様は **Context7**、Web プラットフォーム標準は **MDN**。どちらにも見えるとき（例: `fetch`・`Promise`）は標準技術なので **MDN** を優先。
+- **ツールの流れ**: `search`（質問を `fetch`・`flexbox` 等の web 技術キーワードに言い換えて検索）→ 候補の `path` を `get-doc` で全文取得。詳細な構文・コード例・仕様が必要なときに `get-doc` まで進む。
+- **ブラウザ互換性**: `search`／`get-doc` が返す `compat-key` を `get-compat` に渡して取得する。BCD キーは推測せず、必ず `search`／`get-doc` 経由で得たものを使う。互換性を調べたいときは検索クエリに「browser compatibility」を含めず、機能名そのもので検索する。
 
 ## Web情報収集（検索・フェッチ）
 
