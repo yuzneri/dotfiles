@@ -69,7 +69,6 @@
       "mcp__playwright__*",
       "mcp__RivalSearchMCP__*",
       "mcp__markitdown__*",
-      "mcp__claude_ai_limitless__*",
       "mcp__claude_ai_Google_Calendar__*",
       "mcp__twilog-mcp__*",
       "mcp__scrapingant__*"
@@ -118,6 +117,8 @@
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
+  "advisorModel": "fable",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "skipAutoPermissionPrompt": true
 }

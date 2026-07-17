@@ -20,3 +20,6 @@ fzf = "latest"
 usage = "latest"
 gh = "latest"
 "npm:playwright" = "latest"
+"pipx:claude-real-video" = "latest"
+yt-dlp = { version = "latest", rename_exe = "yt-dlp" }
+"github:RivoLink/leaf" = "latest"
