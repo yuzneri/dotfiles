@@ -15,8 +15,8 @@ alias ls='ls --color=auto'
 alias ll='ls -lh --color=auto'
 
 if (( $+commands[eza] )); then
-  alias ls='eza -F'
-  alias ll='eza -lgF --git --time-style long-iso --hyperlink --icons'
+  alias ls='eza -F=auto'
+  alias ll='eza -lgF=auto --git --time-style long-iso --hyperlink --icons=auto'
 fi
 
 if (( $+commands[batcat] )); then
