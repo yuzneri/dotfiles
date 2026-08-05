@@ -71,7 +71,8 @@
       "mcp__markitdown__*",
       "mcp__claude_ai_Google_Calendar__*",
       "mcp__twilog-mcp__*",
-      "mcp__scrapingant__*"
+      "mcp__scrapingant__*",
+      "mcp__mdn__*"
     ],
     "deny": [
       "Bash(apt install:*)",
@@ -120,5 +121,6 @@
   "advisorModel": "fable",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "model": "claude-fable-5[1m]"
 }
