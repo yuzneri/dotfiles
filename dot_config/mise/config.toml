@@ -23,3 +23,20 @@ gh = "latest"
 "pipx:claude-real-video" = "latest"
 yt-dlp = { version = "latest", rename_exe = "yt-dlp" }
 "github:RivoLink/leaf" = "latest"
+
+[bootstrap.macos.finder]
+show_pathbar = true
+show_status_bar = true
+preferred_view_style = "list"
+
+[bootstrap.macos.keyboard]
+fn_state = true
+
+[bootstrap.macos.trackpad]
+tap_to_click = true
+three_finger_drag = false
+
+[bootstrap.macos.defaults]
+"com.apple.dock" = { tilesize = 16.0 }
+"com.apple.finder" = { AppleShowAllFiles = "TRUE" }
+NSGlobalDomain = { KeyRepeat = 2.0, InitialKeyRepeat = 15.0 }
