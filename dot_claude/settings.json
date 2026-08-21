@@ -122,6 +122,6 @@
   "advisorModel": "fable",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "skipAutoPermissionPrompt": true,
-  "model": "claude-fable-5[1m]"
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true
 }
