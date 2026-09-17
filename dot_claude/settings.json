@@ -3,7 +3,8 @@
   "env": {
     "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "64000",
     "ENABLE_TOOL_SEARCH": "auto:5",
-    "CLAUDE_CODE_THRIFTY_SONIC": "false"
+    "CLAUDE_CODE_THRIFTY_SONIC": "false",
+    "CLAUDE_CODE_DISABLE_MOUSE_CLICKS": "1"
   },
   "attribution": {
     "commit": "",
@@ -121,7 +122,7 @@
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
   "advisorModel": "fable",
-  "tui": "fullscreen",
+  "tui": "default",
   "skipDangerousModePermissionPrompt": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true
