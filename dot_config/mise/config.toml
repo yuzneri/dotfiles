@@ -23,3 +23,5 @@ gh = "latest"
 "pipx:claude-real-video" = "latest"
 yt-dlp = { version = "latest", rename_exe = "yt-dlp" }
 "github:RivoLink/leaf" = "latest"
+"github:jonhadfield/sn-cli" = "latest"
+rclone = "latest"
