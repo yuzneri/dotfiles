@@ -61,3 +61,5 @@
 [user]
 	name = yuzneri
 	email = git@yuzneri.net
+[submodule]
+	recurse = true
