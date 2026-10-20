@@ -21,3 +21,4 @@ prefix_rule(pattern=["sed", "-n", "1,360p", "pre/agent_session_manager/relocate.
 prefix_rule(pattern=["sed", "-n", "1,240p", "pre/agent_session_manager/__main__.py"], decision="allow")
 prefix_rule(pattern=["sed", "-n", "260,760p", "pre/DESIGN.md"], decision="allow")
 prefix_rule(pattern=["/usr/bin/zsh", "-lc", "sysctl kernel.apparmor_restrict_unprivileged_userns 2>/dev/null; aa-status 2>/dev/null; systemctl is-active apparmor 2>/dev/null"], decision="allow")
+prefix_rule(pattern=["codex", "exec"], decision="allow")
