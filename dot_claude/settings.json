@@ -121,6 +121,11 @@
   "language": "japanese",
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
   "advisorModel": "fable",
   "tui": "default",
   "skipDangerousModePermissionPrompt": true,
